@@ -53,9 +53,6 @@
     <Reference Include="Guna.UI2">
       <HintPath>F:\CmlLib.Core-master\packages\Guna UI Framework Ultimate 2.0.0.1\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="MaterialSkin">
-      <HintPath>F:\CmlLib.Core-master\packages\MaterialSkin.2.2.2.0\lib\net461\MaterialSkin.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
