@@ -19,6 +19,8 @@ namespace A_GUI
         public Form1()
         {
             InitializeComponent();
+
+            //Not the best fix for allowing it to edit label1 across threads but it works for now
             Form1.CheckForIllegalCrossThreadCalls = false;
         }
 
@@ -31,29 +33,22 @@ namespace A_GUI
             settings.PersistSessionCookies = true;
             Cef.Initialize(settings);
 
-            browser = new ChromiumWebBrowser("https://ag.ultrafork.com/");
+            //Create a point browser to Advanced GUIS development webpage ( can also be set to https://advancedgui.app/ )
+            browser = new ChromiumWebBrowser("https://development.advancedgui.app/");
 
             this.Controls.Add(browser);
             browser.DownloadHandler = new DownloadHandler();
             browser.Dock = DockStyle.Fill;
+
+            //Fix docking issue i was having
             browser.BringToFront();
             guna2ResizeBox1.BringToFront();
             panel1.BringToFront();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = false;
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

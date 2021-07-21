@@ -1,6 +1,7 @@
 ﻿using CefSharp;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -17,16 +18,20 @@ namespace A_GUI
 
         public void OnBeforeDownload(IWebBrowser chromiumWebBrowser, IBrowser browser, DownloadItem downloadItem, IBeforeDownloadCallback callback)
         {
+            if (File.Exists(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName))
+            {
+                File.Delete(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName);
+            }
+
             OnBeforeDownloadFired?.Invoke(this, downloadItem);
 
             if (!callback.IsDisposed)
             {
-                string DownloadsDirectoryPath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Cache\\";
 
                 using (callback)
                 {
                     
-                    callback.Continue(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName, showDialog: true);
+                    callback.Continue(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName, showDialog: false);
                 }
             }
         }
@@ -54,7 +59,7 @@ namespace A_GUI
                     if (fc != null)
                     {
                         fc.label1.Text = "File has been exported to " + System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName;
-                        await Task.Delay(3000);
+                        await Task.Delay(5000);
                         fc.panel1.Visible = false;
                     }
                 }

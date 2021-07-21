@@ -19,6 +19,7 @@ namespace A_GUI
         Form1 f = new Form1();
         private async void Form2_Load(object sender, EventArgs e)
         {
+            //For Preloading the Main form so the CefSharp browser can load in before showing.
             f.Show();
             f.WindowState = FormWindowState.Minimized;
             this.Activate();
