@@ -18,9 +18,12 @@ namespace A_GUI
 
         public void OnBeforeDownload(IWebBrowser chromiumWebBrowser, IBrowser browser, DownloadItem downloadItem, IBeforeDownloadCallback callback)
         {
-            if (File.Exists(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName))
+            if (Settings.Default.Autosave)
             {
-                File.Delete(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName);
+                if (File.Exists(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName))
+                {
+                    File.Delete(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName);
+                }
             }
 
             OnBeforeDownloadFired?.Invoke(this, downloadItem);
@@ -30,8 +33,14 @@ namespace A_GUI
 
                 using (callback)
                 {
-                    
-                    callback.Continue(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName, showDialog: false);
+                    if (Settings.Default.Autosave)
+                    {
+                        callback.Continue(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName, showDialog: false);
+                    }
+                    else
+                    {
+                        callback.Continue(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName, showDialog: true);
+                    }
                 }
             }
         }

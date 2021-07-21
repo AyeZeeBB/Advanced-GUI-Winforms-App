@@ -34,5 +34,17 @@ namespace A_GUI {
                 this["DB"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Autosave {
+            get {
+                return ((bool)(this["Autosave"]));
+            }
+            set {
+                this["Autosave"] = value;
+            }
+        }
     }
 }
