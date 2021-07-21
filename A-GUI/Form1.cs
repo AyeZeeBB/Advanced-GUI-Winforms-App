@@ -33,8 +33,15 @@ namespace A_GUI
             settings.PersistSessionCookies = true;
             Cef.Initialize(settings);
 
-            //Create a point browser to Advanced GUIS development webpage ( can also be set to https://advancedgui.app/ )
-            browser = new ChromiumWebBrowser("https://development.advancedgui.app/");
+            //Create a point browser to Advanced GUIS webpage depending on setting selected
+            if (Settings.Default.DB == true)
+            {
+                browser = new ChromiumWebBrowser("https://development.advancedgui.app/");
+            }
+            else
+            {
+                browser = new ChromiumWebBrowser("https://advancedgui.app/");
+            }
 
             this.Controls.Add(browser);
             browser.DownloadHandler = new DownloadHandler();
@@ -42,18 +49,24 @@ namespace A_GUI
 
             //Fix docking issue i was having
             browser.BringToFront();
-            guna2ResizeBox1.BringToFront();
-            panel1.BringToFront();
+            resizebox.BringToFront();
+            notificationpanel.BringToFront();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
+            notificationpanel.Visible = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Form3 f = new Form3();
+            f.Show();
         }
     }
 }

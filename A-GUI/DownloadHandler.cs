@@ -49,8 +49,8 @@ namespace A_GUI
                 {
                     if (fc != null)
                     {
-                        fc.panel1.Visible = true;
-                        fc.label1.Text = String.Format("Current Download Speed: {0} bytes ({1}%)", downloadItem.CurrentSpeed, downloadItem.PercentComplete);
+                        fc.notificationpanel.Visible = true;
+                        fc.notificationlabel.Text = String.Format("Current Download Speed: {0} bytes ({1}%)", downloadItem.CurrentSpeed, downloadItem.PercentComplete);
                     }
                 }
 
@@ -58,15 +58,15 @@ namespace A_GUI
                 {
                     if (fc != null)
                     {
-                        fc.label1.Text = "File has been exported to " + System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName;
+                        fc.notificationlabel.Text = "File has been downloaded to " + System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName;
                         await Task.Delay(5000);
-                        fc.panel1.Visible = false;
+                        fc.notificationpanel.Visible = false;
                     }
                 }
 
                 if(downloadItem.IsCancelled)
                 {
-                    fc.panel1.Visible = false;
+                    fc.notificationpanel.Visible = false;
                 }
             }
         }
