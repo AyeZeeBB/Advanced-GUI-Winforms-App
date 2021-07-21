@@ -10,7 +10,7 @@
     <ProjectGuid>{0F274557-EA12-46B7-8517-EB261785CEC9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>A_GUI</RootNamespace>
-    <AssemblyName>A-GUI</AssemblyName>
+    <AssemblyName>A-GUI App</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -118,16 +118,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\favicon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\83636.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="83636.ico" />
     <None Include="Resources\836362222.png" />
     <None Include="Resources\ajax-loader.gif" />
-    <None Include="Resources\5419994.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
