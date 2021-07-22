@@ -48,26 +48,27 @@ namespace A_GUI
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.settingsbutton = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.topicon = new System.Windows.Forms.PictureBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.label1 = new System.Windows.Forms.Label();
+            this.settingsbutton = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.topicon = new System.Windows.Forms.PictureBox();
             this.notificationpanel.SuspendLayout();
             this.toppanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.topicon)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.topicon)).BeginInit();
             this.SuspendLayout();
             // 
             // notificationpanel
             // 
+            this.notificationpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.notificationpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.notificationpanel.Controls.Add(this.panel3);
-            this.notificationpanel.Location = new System.Drawing.Point(842, 385);
+            this.notificationpanel.Location = new System.Drawing.Point(567, 270);
             this.notificationpanel.Name = "notificationpanel";
             this.notificationpanel.Size = new System.Drawing.Size(221, 118);
             this.notificationpanel.TabIndex = 0;
@@ -113,7 +114,7 @@ namespace A_GUI
             this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppanel.Location = new System.Drawing.Point(0, 0);
             this.toppanel.Name = "toppanel";
-            this.toppanel.Size = new System.Drawing.Size(1075, 29);
+            this.toppanel.Size = new System.Drawing.Size(800, 29);
             this.toppanel.TabIndex = 1;
             // 
             // toplabel
@@ -132,7 +133,7 @@ namespace A_GUI
             this.minimizebutton.FillColor = System.Drawing.Color.Transparent;
             this.minimizebutton.HoverState.Parent = this.minimizebutton;
             this.minimizebutton.IconColor = System.Drawing.Color.Black;
-            this.minimizebutton.Location = new System.Drawing.Point(961, 3);
+            this.minimizebutton.Location = new System.Drawing.Point(686, 3);
             this.minimizebutton.Name = "minimizebutton";
             this.minimizebutton.ShadowDecoration.Parent = this.minimizebutton;
             this.minimizebutton.Size = new System.Drawing.Size(37, 23);
@@ -145,7 +146,7 @@ namespace A_GUI
             this.maximizebutton.FillColor = System.Drawing.Color.Transparent;
             this.maximizebutton.HoverState.Parent = this.maximizebutton;
             this.maximizebutton.IconColor = System.Drawing.Color.Black;
-            this.maximizebutton.Location = new System.Drawing.Point(998, 3);
+            this.maximizebutton.Location = new System.Drawing.Point(723, 3);
             this.maximizebutton.Name = "maximizebutton";
             this.maximizebutton.ShadowDecoration.Parent = this.maximizebutton;
             this.maximizebutton.Size = new System.Drawing.Size(37, 23);
@@ -157,7 +158,7 @@ namespace A_GUI
             this.closebutton.FillColor = System.Drawing.Color.Transparent;
             this.closebutton.HoverState.Parent = this.closebutton;
             this.closebutton.IconColor = System.Drawing.Color.Black;
-            this.closebutton.Location = new System.Drawing.Point(1035, 3);
+            this.closebutton.Location = new System.Drawing.Point(760, 3);
             this.closebutton.Name = "closebutton";
             this.closebutton.ShadowDecoration.Parent = this.closebutton;
             this.closebutton.Size = new System.Drawing.Size(37, 23);
@@ -169,7 +170,7 @@ namespace A_GUI
             this.resizebox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(47)))));
             this.resizebox.FillColor = System.Drawing.Color.White;
             this.resizebox.ForeColor = System.Drawing.Color.Empty;
-            this.resizebox.Location = new System.Drawing.Point(1056, 495);
+            this.resizebox.Location = new System.Drawing.Point(781, 380);
             this.resizebox.Name = "resizebox";
             this.resizebox.Size = new System.Drawing.Size(20, 20);
             this.resizebox.TabIndex = 2;
@@ -266,36 +267,11 @@ namespace A_GUI
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(842, 28);
+            this.panel1.Location = new System.Drawing.Point(567, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 92);
             this.panel1.TabIndex = 3;
             this.panel1.Visible = false;
-            // 
-            // settingsbutton
-            // 
-            this.settingsbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingsbutton.CheckedState.Parent = this.settingsbutton;
-            this.settingsbutton.HoverState.Image = global::A_GUI.Properties.Resources.baseline_settings_black_24dp;
-            this.settingsbutton.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.settingsbutton.HoverState.Parent = this.settingsbutton;
-            this.settingsbutton.Image = global::A_GUI.Properties.Resources.baseline_settings_black_24dp;
-            this.settingsbutton.Location = new System.Drawing.Point(929, 3);
-            this.settingsbutton.Name = "settingsbutton";
-            this.settingsbutton.PressedState.Parent = this.settingsbutton;
-            this.settingsbutton.Size = new System.Drawing.Size(29, 23);
-            this.settingsbutton.TabIndex = 5;
-            this.settingsbutton.Click += new System.EventHandler(this.guna2ImageButton1_Click);
-            // 
-            // topicon
-            // 
-            this.topicon.Image = global::A_GUI.Properties.Resources._83636;
-            this.topicon.Location = new System.Drawing.Point(3, 3);
-            this.topicon.Name = "topicon";
-            this.topicon.Size = new System.Drawing.Size(31, 23);
-            this.topicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.topicon.TabIndex = 3;
-            this.topicon.TabStop = false;
             // 
             // guna2Elipse2
             // 
@@ -339,17 +315,43 @@ namespace A_GUI
             this.label1.TabIndex = 9;
             this.label1.Text = "Message";
             // 
+            // settingsbutton
+            // 
+            this.settingsbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.settingsbutton.CheckedState.Parent = this.settingsbutton;
+            this.settingsbutton.HoverState.Image = global::A_GUI.Properties.Resources.baseline_settings_black_24dp;
+            this.settingsbutton.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.settingsbutton.HoverState.Parent = this.settingsbutton;
+            this.settingsbutton.Image = global::A_GUI.Properties.Resources.baseline_settings_black_24dp;
+            this.settingsbutton.Location = new System.Drawing.Point(654, 3);
+            this.settingsbutton.Name = "settingsbutton";
+            this.settingsbutton.PressedState.Parent = this.settingsbutton;
+            this.settingsbutton.Size = new System.Drawing.Size(29, 23);
+            this.settingsbutton.TabIndex = 5;
+            this.settingsbutton.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            // 
+            // topicon
+            // 
+            this.topicon.Image = global::A_GUI.Properties.Resources._83636;
+            this.topicon.Location = new System.Drawing.Point(3, 3);
+            this.topicon.Name = "topicon";
+            this.topicon.Size = new System.Drawing.Size(31, 23);
+            this.topicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.topicon.TabIndex = 3;
+            this.topicon.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 515);
+            this.ClientSize = new System.Drawing.Size(800, 400);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.resizebox);
             this.Controls.Add(this.toppanel);
             this.Controls.Add(this.notificationpanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WebEditor";
@@ -361,9 +363,9 @@ namespace A_GUI
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.topicon)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.topicon)).EndInit();
             this.ResumeLayout(false);
 
         }
