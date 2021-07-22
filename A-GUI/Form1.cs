@@ -20,11 +20,12 @@ namespace A_GUI
         {
             InitializeComponent();
 
-            //Not the best fix for allowing it to edit label1 across threads but it works for now
+            //Not the best way for allowing it to edit across threads but it works for now
             Form1.CheckForIllegalCrossThreadCalls = false;
         }
 
         public ChromiumWebBrowser browser;
+        bool firststart = true;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -53,6 +54,7 @@ namespace A_GUI
 
             //Add browser to form
             this.Controls.Add(browser);
+
             //setup download handler
             browser.DownloadHandler = new DownloadHandler();
             browser.Dock = DockStyle.Fill;
@@ -62,6 +64,9 @@ namespace A_GUI
             panel1.BringToFront();
             resizebox.BringToFront();
             notificationpanel.BringToFront();
+
+            //pervents the notfication panel from showing on startup due to setting checkbox values
+            firststart = false;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -89,18 +94,7 @@ namespace A_GUI
             }
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-            //Save Settings
-            Settings.Default.DB = guna2CheckBox1.Checked;
-            Settings.Default.Autosave = guna2CheckBox2.Checked;
-            Settings.Default.Save();
-
-            //Set Settings panel to not visible after apply
-            panel1.Visible = false;
-        }
-
-        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private async void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             //Save Checkbox
             Settings.Default.DB = guna2CheckBox1.Checked;
@@ -115,13 +109,61 @@ namespace A_GUI
             {
                 browser.Load("https://advancedgui.app/");
             }
+
+            //Notify of setting change
+            if (!firststart)
+            {
+                //Show notification panel
+                notificationpanel.Visible = true;
+                notificationlabel.Text = "Success";
+
+                //Set label text depending on checkbox state
+                if (Settings.Default.DB)
+                {
+                    label1.Text = "Editior has been updated to the development build!";
+                }
+                else
+                {
+                    label1.Text = "Editior has been updated to the release build!";
+                }
+
+                //Wait before hiding panel
+                await Task.Delay(3000);
+
+                //Hide notification panel
+                notificationpanel.Visible = false;
+            }
         }
 
-        private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
+        private async void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             //Save Checkbox
             Settings.Default.Autosave = guna2CheckBox2.Checked;
             Settings.Default.Save();
+
+            //Notify of setting change
+            if (!firststart)
+            {
+                //Show notification panel
+                notificationpanel.Visible = true;
+                notificationlabel.Text = "Success";
+
+                //Set label text depending on checkbox state
+                if (Settings.Default.Autosave)
+                {
+                    label1.Text = "Auto-Save to projects folder has been enabled!";
+                }
+                else
+                {
+                    label1.Text = "Auto-Save to projects folder has been disabled!";
+                }
+
+                //Wait before hiding panel
+                await Task.Delay(3000);
+
+                //Hide notification panel
+                notificationpanel.Visible = false;
+            }
         }
     }
 }

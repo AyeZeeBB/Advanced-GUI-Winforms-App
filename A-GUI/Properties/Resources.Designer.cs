@@ -83,9 +83,9 @@ namespace A_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ajax_loader {
+        internal static System.Drawing.Bitmap baseline_settings_black_24dp {
             get {
-                object obj = ResourceManager.GetObject("ajax-loader", resourceCulture);
+                object obj = ResourceManager.GetObject("baseline_settings_black_24dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace A_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap baseline_settings_black_24dp {
+        internal static System.Drawing.Bitmap loading__1_ {
             get {
-                object obj = ResourceManager.GetObject("baseline_settings_black_24dp", resourceCulture);
+                object obj = ResourceManager.GetObject("loading (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
