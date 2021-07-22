@@ -19,16 +19,17 @@ namespace A_GUI
         Form1 f = new Form1();
         private async void Form2_Load(object sender, EventArgs e)
         {
-            //For Preloading the Main form so the CefSharp browser can load in before showing.
-            f.Show();
-            f.WindowState = FormWindowState.Minimized;
             this.Activate();
+
+            //For Preloading the Main form so the CefSharp browser can load in before showing.
+            //Not needed, just so it dosnt show a white screen before the browser page loads.
+            f.Show();
+            f.Hide();
 
             await Task.Delay(2000);
 
-            f.WindowState = FormWindowState.Normal;
             this.Hide();
-            f.Activate();
+            f.Show();
         }
     }
 }

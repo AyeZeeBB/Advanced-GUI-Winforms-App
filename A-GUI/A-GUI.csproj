@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="83636.ico" />
+    <None Include="Resources\outline_new_releases_black_24dp.png" />
     <None Include="Resources\loading %281%29.gif" />
     <None Include="Resources\baseline_settings_black_24dp.png" />
     <None Include="Resources\836362222.png" />

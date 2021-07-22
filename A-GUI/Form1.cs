@@ -5,8 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +27,20 @@ namespace A_GUI
         }
 
         public ChromiumWebBrowser browser;
-        bool firststart = true;
+        bool AppStarting = true;
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Simple check to see if you are on the latest version of the app
+            WebClient client = new WebClient();
+            double reply = double.Parse(client.DownloadString("https://zeesdesign.com/AGUI/version.txt"));
+            
+            //if the reply dosnt equal current version then enable update notification button
+            if (reply != 1.4)
+            {
+                guna2ImageButton1.Visible = true;
+            }
+
             //Make sure settings panel is not visible
             panel1.Visible = false;
 
@@ -66,7 +78,7 @@ namespace A_GUI
             notificationpanel.BringToFront();
 
             //pervents the notfication panel from showing on startup due to setting checkbox values
-            firststart = false;
+            AppStarting = false;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -111,7 +123,7 @@ namespace A_GUI
             }
 
             //Notify of setting change
-            if (!firststart)
+            if (!AppStarting)
             {
                 //Show notification panel
                 notificationpanel.Visible = true;
@@ -142,7 +154,7 @@ namespace A_GUI
             Settings.Default.Save();
 
             //Notify of setting change
-            if (!firststart)
+            if (!AppStarting)
             {
                 //Show notification panel
                 notificationpanel.Visible = true;
@@ -164,6 +176,12 @@ namespace A_GUI
                 //Hide notification panel
                 notificationpanel.Visible = false;
             }
+        }
+
+        private void guna2ImageButton1_Click_1(object sender, EventArgs e)
+        {
+            //Goto the apps download page when clicked
+            Process.Start("https://github.com/I-Am-Zee/Advanced-GUI-Winforms-App/releases");
         }
     }
 }
