@@ -12,5 +12,6 @@ You licence key, and project file data / cookies will be saved in the Cache dire
 
 Preview:
 
-https://user-images.githubusercontent.com/18438498/126571049-ee590a36-0adb-48d6-b70a-e631b753109f.mp4
+https://user-images.githubusercontent.com/18438498/126580430-b6b0ec66-6695-49c4-9c7e-b41a9d9e5217.mp4
+
 
