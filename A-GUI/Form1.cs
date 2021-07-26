@@ -31,15 +31,23 @@ namespace A_GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Simple check to see if you are on the latest version of the app
-            WebClient client = new WebClient();
-            double reply = double.Parse(client.DownloadString("https://zeesdesign.com/AGUI/version.txt"));
-            
-            //if the reply dosnt equal current version then enable update notification button
-            if (reply != 1.4)
+            try
             {
-                guna2ImageButton1.Visible = true;
+                //Simple check to see if you are on the latest version of the app
+                WebClient client = new WebClient();
+                double reply = double.Parse(client.DownloadString("http://zeesdesign.com/AGUI/version.txt"));
+
+                //if the reply dosnt equal current version then enable update notification button
+                if (reply != 1.5)
+                {
+                    guna2ImageButton1.Visible = true;
+                }
+            } 
+            catch
+            {
+                guna2ImageButton1.Visible = false;
             }
+            
 
             //Make sure settings panel is not visible
             panel1.Visible = false;
