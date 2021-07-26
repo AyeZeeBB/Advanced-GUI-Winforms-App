@@ -25,7 +25,7 @@ namespace A_GUI {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool DB {
             get {
                 return ((bool)(this["DB"]));
@@ -44,6 +44,18 @@ namespace A_GUI {
             }
             set {
                 this["Autosave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UpdateCheck {
+            get {
+                return ((bool)(this["UpdateCheck"]));
+            }
+            set {
+                this["UpdateCheck"] = value;
             }
         }
     }

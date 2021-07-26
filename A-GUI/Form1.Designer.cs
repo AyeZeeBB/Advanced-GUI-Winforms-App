@@ -57,6 +57,7 @@ namespace A_GUI
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.notificationpanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.toppanel.SuspendLayout();
@@ -269,11 +270,12 @@ namespace A_GUI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.panel2.Controls.Add(this.guna2CheckBox3);
             this.panel2.Controls.Add(this.guna2CheckBox2);
             this.panel2.Controls.Add(this.guna2CheckBox1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(215, 51);
+            this.panel2.Size = new System.Drawing.Size(215, 73);
             this.panel2.TabIndex = 7;
             // 
             // guna2CheckBox2
@@ -288,9 +290,9 @@ namespace A_GUI
             this.guna2CheckBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.guna2CheckBox2.Location = new System.Drawing.Point(6, 28);
             this.guna2CheckBox2.Name = "guna2CheckBox2";
-            this.guna2CheckBox2.Size = new System.Drawing.Size(189, 17);
+            this.guna2CheckBox2.Size = new System.Drawing.Size(178, 17);
             this.guna2CheckBox2.TabIndex = 9;
-            this.guna2CheckBox2.Text = "Auto Save Files To Projects Folder";
+            this.guna2CheckBox2.Text = "Auto-Save files to projects folder";
             this.guna2CheckBox2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.guna2CheckBox2.UncheckedState.BorderRadius = 2;
             this.guna2CheckBox2.UncheckedState.BorderThickness = 1;
@@ -310,9 +312,9 @@ namespace A_GUI
             this.guna2CheckBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.guna2CheckBox1.Location = new System.Drawing.Point(6, 7);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(153, 17);
+            this.guna2CheckBox1.Size = new System.Drawing.Size(148, 17);
             this.guna2CheckBox1.TabIndex = 6;
-            this.guna2CheckBox1.Text = "Use Development Website";
+            this.guna2CheckBox1.Text = "Use development website";
             this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.guna2CheckBox1.UncheckedState.BorderRadius = 2;
             this.guna2CheckBox1.UncheckedState.BorderThickness = 1;
@@ -327,7 +329,7 @@ namespace A_GUI
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(617, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(221, 57);
+            this.panel1.Size = new System.Drawing.Size(221, 79);
             this.panel1.TabIndex = 3;
             this.panel1.Visible = false;
             // 
@@ -361,6 +363,28 @@ namespace A_GUI
             this.guna2HtmlToolTip1.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.guna2HtmlToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.guna2HtmlToolTip1.ToolTipTitle = "Update Available";
+            // 
+            // guna2CheckBox3
+            // 
+            this.guna2CheckBox3.Animated = true;
+            this.guna2CheckBox3.AutoSize = true;
+            this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2CheckBox3.CheckedState.BorderRadius = 2;
+            this.guna2CheckBox3.CheckedState.BorderThickness = 1;
+            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.guna2CheckBox3.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2CheckBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2CheckBox3.Location = new System.Drawing.Point(6, 50);
+            this.guna2CheckBox3.Name = "guna2CheckBox3";
+            this.guna2CheckBox3.Size = new System.Drawing.Size(113, 17);
+            this.guna2CheckBox3.TabIndex = 10;
+            this.guna2CheckBox3.Text = "Check for updates";
+            this.guna2CheckBox3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2CheckBox3.UncheckedState.BorderRadius = 2;
+            this.guna2CheckBox3.UncheckedState.BorderThickness = 1;
+            this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.guna2CheckBox3.UseVisualStyleBackColor = true;
+            this.guna2CheckBox3.CheckedChanged += new System.EventHandler(this.guna2CheckBox3_CheckedChanged);
             // 
             // Form1
             // 
@@ -419,6 +443,7 @@ namespace A_GUI
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
     }
 }
 

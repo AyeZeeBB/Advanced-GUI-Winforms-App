@@ -31,21 +31,24 @@ namespace A_GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
+            if (Settings.Default.UpdateCheck)
             {
-                //Simple check to see if you are on the latest version of the app
-                WebClient client = new WebClient();
-                double reply = double.Parse(client.DownloadString("http://zeesdesign.com/AGUI/version.txt"));
-
-                //if the reply dosnt equal current version then enable update notification button
-                if (reply != 1.5)
+                try
                 {
-                    guna2ImageButton1.Visible = true;
+                    //Simple check to see if you are on the latest version of the app
+                    WebClient client = new WebClient();
+                    double reply = double.Parse(client.DownloadString("http://zeesdesign.com/AGUI/version.txt"));
+
+                    //if the reply dosnt equal current version then enable update notification button
+                    if (reply != 1.5)
+                    {
+                        guna2ImageButton1.Visible = true;
+                    }
                 }
-            } 
-            catch
-            {
-                guna2ImageButton1.Visible = false;
+                catch
+                {
+                    guna2ImageButton1.Visible = false;
+                }
             }
             
 
@@ -190,6 +193,13 @@ namespace A_GUI
         {
             //Goto the apps download page when clicked
             Process.Start("https://github.com/I-Am-Zee/Advanced-GUI-Winforms-App/releases");
+        }
+
+        private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            //Save Checkbox
+            Settings.Default.UpdateCheck = guna2CheckBox3.Checked;
+            Settings.Default.Save();
         }
     }
 }
