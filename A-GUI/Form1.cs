@@ -74,6 +74,7 @@ namespace A_GUI
             //load checkboxes from saved settings
             guna2CheckBox1.Checked = Settings.Default.DB;
             guna2CheckBox2.Checked = Settings.Default.Autosave;
+            guna2CheckBox3.Checked = Settings.Default.UpdateCheck;
 
             //Add browser to form
             this.Controls.Add(browser);
