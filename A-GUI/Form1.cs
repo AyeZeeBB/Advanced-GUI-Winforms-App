@@ -28,6 +28,7 @@ namespace A_GUI
 
         public ChromiumWebBrowser browser;
         bool AppStarting = true;
+        int time = 0;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -37,10 +38,10 @@ namespace A_GUI
                 {
                     //Simple check to see if you are on the latest version of the app
                     WebClient client = new WebClient();
-                    double reply = double.Parse(client.DownloadString("http://zeesdesign.com/AGUI/version.txt"));
+                    double reply = double.Parse(client.DownloadString("https://pastebin.com/raw/EUtysBEK"));
 
                     //if the reply dosnt equal current version then enable update notification button
-                    if (reply != 1.5)
+                    if (reply != 1.6)
                     {
                         guna2ImageButton1.Visible = true;
                     }
@@ -93,12 +94,6 @@ namespace A_GUI
             AppStarting = false;
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            //Hide notification panel if the close button is pressed
-            notificationpanel.Visible = false;
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Make sure the processes closes
@@ -118,7 +113,7 @@ namespace A_GUI
             }
         }
 
-        private async void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             //Save Checkbox
             Settings.Default.DB = guna2CheckBox1.Checked;
@@ -139,27 +134,20 @@ namespace A_GUI
             {
                 //Show notification panel
                 notificationpanel.Visible = true;
-                notificationlabel.Text = "Success";
 
                 //Set label text depending on checkbox state
                 if (Settings.Default.DB)
                 {
-                    label1.Text = "Editior has been updated to the development build!";
+                    ShowNotify("Success: Editior has been updated to the development build!");
                 }
                 else
                 {
-                    label1.Text = "Editior has been updated to the release build!";
+                    ShowNotify("Success: Editior has been updated to the release build!");
                 }
-
-                //Wait before hiding panel
-                await Task.Delay(3000);
-
-                //Hide notification panel
-                notificationpanel.Visible = false;
             }
         }
 
-        private async void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
+        private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             //Save Checkbox
             Settings.Default.Autosave = guna2CheckBox2.Checked;
@@ -168,25 +156,15 @@ namespace A_GUI
             //Notify of setting change
             if (!AppStarting)
             {
-                //Show notification panel
-                notificationpanel.Visible = true;
-                notificationlabel.Text = "Success";
-
                 //Set label text depending on checkbox state
                 if (Settings.Default.Autosave)
                 {
-                    label1.Text = "Auto-Save to projects folder has been enabled!";
+                    ShowNotify("Success: Auto-Save to projects folder has been enabled!");
                 }
                 else
                 {
-                    label1.Text = "Auto-Save to projects folder has been disabled!";
+                    ShowNotify("Success: Auto-Save to projects folder has been disabled!");
                 }
-
-                //Wait before hiding panel
-                await Task.Delay(3000);
-
-                //Hide notification panel
-                notificationpanel.Visible = false;
             }
         }
 
@@ -201,6 +179,35 @@ namespace A_GUI
             //Save Checkbox
             Settings.Default.UpdateCheck = guna2CheckBox3.Checked;
             Settings.Default.Save();
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            //Hide notification panel if the close button is pressed
+            timer1.Enabled = false;
+            notificationpanel.Visible = false;
+        }
+
+        public void ShowNotify(string message)
+        {
+            //Show notification panel
+            notificationpanel.Visible = true;
+
+            notificationlabel.Text = message;
+
+            //Wait before hiding panel
+            time = 0;
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            time++;
+            if (time > 200)
+            {
+                timer1.Enabled = false;
+                notificationpanel.Visible = false;
+            }
         }
     }
 }

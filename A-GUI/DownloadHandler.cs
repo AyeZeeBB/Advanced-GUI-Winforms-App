@@ -50,7 +50,7 @@ namespace A_GUI
             }
         } 
 
-        public async void OnDownloadUpdated(IWebBrowser chromiumWebBrowser, IBrowser browser, DownloadItem downloadItem, IDownloadItemCallback callback)
+        public void OnDownloadUpdated(IWebBrowser chromiumWebBrowser, IBrowser browser, DownloadItem downloadItem, IDownloadItemCallback callback)
         {
             OnDownloadUpdatedFired?.Invoke(this, downloadItem);
 
@@ -62,12 +62,7 @@ namespace A_GUI
                     //Check to see if it can find the open form
                     if (fc != null)
                     {
-                        //Show notification panel
-                        fc.notificationpanel.Visible = true;
-
-                        //Set labels
-                        fc.notificationlabel.Text = "Downloading...";
-                        fc.label1.Text = String.Format("Current Download Speed: {0} bytes ({1}%)", downloadItem.CurrentSpeed, downloadItem.PercentComplete);
+                        fc.ShowNotify(String.Format("Downloading: Current Download Speed: {0} bytes ({1}%)", downloadItem.CurrentSpeed, downloadItem.PercentComplete));
                     }
                 }
 
@@ -76,15 +71,7 @@ namespace A_GUI
                     //Check to see if it can find the open form
                     if (fc != null)
                     {
-                        //Set labels
-                        fc.notificationlabel.Text = "Success";
-                        fc.label1.Text = "File has been downloaded to " + System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName;
-
-                        //Wait before hiding notification panel
-                        await Task.Delay(5000);
-
-                        //Hide notification panel
-                        fc.notificationpanel.Visible = false;
+                        fc.ShowNotify("Success: File has been downloaded to " + System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Projects\\" + downloadItem.SuggestedFileName);
                     }
                 }
 
@@ -93,15 +80,7 @@ namespace A_GUI
                     //Check to see if it can find the open form
                     if (fc != null)
                     {
-                        //Set labels
-                        fc.notificationlabel.Text = "Error";
-                        fc.label1.Text = "Download has been canceled";
-
-                        //Wait before hiding notification panel
-                        await Task.Delay(5000);
-
-                        //Hide notification panel
-                        fc.notificationpanel.Visible = false;
+                        fc.ShowNotify("Error: Download has been canceled!");
                     }
                 }
             }

@@ -31,11 +31,6 @@ namespace A_GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.notificationpanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.notificationpanelclose = new Guna.UI2.WinForms.Guna2Button();
             this.notificationlabel = new System.Windows.Forms.Label();
             this.toppanel = new System.Windows.Forms.Panel();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -49,6 +44,7 @@ namespace A_GUI
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,81 +53,22 @@ namespace A_GUI
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
-            this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.notificationpanel.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.notificationpanel = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toppanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topicon)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.notificationpanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // notificationpanel
-            // 
-            this.notificationpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.notificationpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
-            this.notificationpanel.Controls.Add(this.panel3);
-            this.notificationpanel.Location = new System.Drawing.Point(617, 370);
-            this.notificationpanel.Name = "notificationpanel";
-            this.notificationpanel.Size = new System.Drawing.Size(221, 118);
-            this.notificationpanel.TabIndex = 0;
-            this.notificationpanel.Visible = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.guna2Separator2);
-            this.panel3.Controls.Add(this.notificationpanelclose);
-            this.panel3.Controls.Add(this.notificationlabel);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(215, 112);
-            this.panel3.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
-            this.label1.Location = new System.Drawing.Point(3, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 72);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Message";
-            // 
-            // guna2Separator2
-            // 
-            this.guna2Separator2.Location = new System.Drawing.Point(3, 23);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(209, 10);
-            this.guna2Separator2.TabIndex = 8;
-            // 
-            // notificationpanelclose
-            // 
-            this.notificationpanelclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.notificationpanelclose.CheckedState.Parent = this.notificationpanelclose;
-            this.notificationpanelclose.CustomImages.Parent = this.notificationpanelclose;
-            this.notificationpanelclose.FillColor = System.Drawing.Color.Transparent;
-            this.notificationpanelclose.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.notificationpanelclose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
-            this.notificationpanelclose.HoverState.Parent = this.notificationpanelclose;
-            this.notificationpanelclose.Location = new System.Drawing.Point(191, 3);
-            this.notificationpanelclose.Name = "notificationpanelclose";
-            this.notificationpanelclose.ShadowDecoration.Parent = this.notificationpanelclose;
-            this.notificationpanelclose.Size = new System.Drawing.Size(21, 22);
-            this.notificationpanelclose.TabIndex = 2;
-            this.notificationpanelclose.Text = "X";
-            this.notificationpanelclose.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // notificationlabel
             // 
             this.notificationlabel.AutoSize = true;
             this.notificationlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.notificationlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
-            this.notificationlabel.Location = new System.Drawing.Point(3, 3);
+            this.notificationlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.notificationlabel.Location = new System.Drawing.Point(3, 4);
             this.notificationlabel.Name = "notificationlabel";
             this.notificationlabel.Size = new System.Drawing.Size(97, 17);
             this.notificationlabel.TabIndex = 1;
@@ -278,6 +215,28 @@ namespace A_GUI
             this.panel2.Size = new System.Drawing.Size(215, 73);
             this.panel2.TabIndex = 7;
             // 
+            // guna2CheckBox3
+            // 
+            this.guna2CheckBox3.Animated = true;
+            this.guna2CheckBox3.AutoSize = true;
+            this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2CheckBox3.CheckedState.BorderRadius = 2;
+            this.guna2CheckBox3.CheckedState.BorderThickness = 1;
+            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.guna2CheckBox3.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2CheckBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2CheckBox3.Location = new System.Drawing.Point(6, 50);
+            this.guna2CheckBox3.Name = "guna2CheckBox3";
+            this.guna2CheckBox3.Size = new System.Drawing.Size(113, 17);
+            this.guna2CheckBox3.TabIndex = 10;
+            this.guna2CheckBox3.Text = "Check for updates";
+            this.guna2CheckBox3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2CheckBox3.UncheckedState.BorderRadius = 2;
+            this.guna2CheckBox3.UncheckedState.BorderThickness = 1;
+            this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.guna2CheckBox3.UseVisualStyleBackColor = true;
+            this.guna2CheckBox3.CheckedChanged += new System.EventHandler(this.guna2CheckBox3_CheckedChanged);
+            // 
             // guna2CheckBox2
             // 
             this.guna2CheckBox2.Animated = true;
@@ -336,12 +295,10 @@ namespace A_GUI
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 15;
-            this.guna2Elipse2.TargetControl = this.notificationpanel;
             // 
             // guna2Elipse3
             // 
             this.guna2Elipse3.BorderRadius = 15;
-            this.guna2Elipse3.TargetControl = this.panel3;
             // 
             // guna2Elipse4
             // 
@@ -364,37 +321,50 @@ namespace A_GUI
             this.guna2HtmlToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.guna2HtmlToolTip1.ToolTipTitle = "Update Available";
             // 
-            // guna2CheckBox3
+            // notificationpanel
             // 
-            this.guna2CheckBox3.Animated = true;
-            this.guna2CheckBox3.AutoSize = true;
-            this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
-            this.guna2CheckBox3.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox3.CheckedState.BorderThickness = 1;
-            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
-            this.guna2CheckBox3.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
-            this.guna2CheckBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
-            this.guna2CheckBox3.Location = new System.Drawing.Point(6, 50);
-            this.guna2CheckBox3.Name = "guna2CheckBox3";
-            this.guna2CheckBox3.Size = new System.Drawing.Size(113, 17);
-            this.guna2CheckBox3.TabIndex = 10;
-            this.guna2CheckBox3.Text = "Check for updates";
-            this.guna2CheckBox3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
-            this.guna2CheckBox3.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox3.UncheckedState.BorderThickness = 1;
-            this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
-            this.guna2CheckBox3.UseVisualStyleBackColor = true;
-            this.guna2CheckBox3.CheckedChanged += new System.EventHandler(this.guna2CheckBox3_CheckedChanged);
+            this.notificationpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.notificationpanel.Controls.Add(this.guna2Button1);
+            this.notificationpanel.Controls.Add(this.notificationlabel);
+            this.notificationpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.notificationpanel.Location = new System.Drawing.Point(0, 475);
+            this.notificationpanel.Name = "notificationpanel";
+            this.notificationpanel.Size = new System.Drawing.Size(850, 25);
+            this.notificationpanel.TabIndex = 4;
+            this.notificationpanel.Visible = false;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(827, 3);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(20, 19);
+            this.guna2Button1.TabIndex = 5;
+            this.guna2Button1.Text = "X";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(850, 500);
+            this.Controls.Add(this.notificationpanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.resizebox);
             this.Controls.Add(this.toppanel);
-            this.Controls.Add(this.notificationpanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(850, 500);
@@ -403,24 +373,21 @@ namespace A_GUI
             this.Text = "WebEditor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.notificationpanel.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.toppanel.ResumeLayout(false);
             this.toppanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topicon)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.notificationpanel.ResumeLayout(false);
+            this.notificationpanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         public System.Windows.Forms.Label notificationlabel;
-        public System.Windows.Forms.Panel notificationpanel;
         private System.Windows.Forms.Panel toppanel;
-        private Guna.UI2.WinForms.Guna2Button notificationpanelclose;
         private Guna.UI2.WinForms.Guna2ResizeBox resizebox;
         private Guna.UI2.WinForms.Guna2ControlBox minimizebutton;
         private Guna.UI2.WinForms.Guna2ControlBox maximizebutton;
@@ -434,9 +401,6 @@ namespace A_GUI
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
-        public System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
@@ -444,6 +408,9 @@ namespace A_GUI
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
+        public System.Windows.Forms.Panel notificationpanel;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
