@@ -8,7 +8,7 @@ If you want to build this yourself you will need to add CefSharp from nuget and 
 
 When you download a GUI from the webeditor it will be saved in the Projects folder inside the Applications directory.
 
-You licence key, and project file data / cookies will be saved at C:\Users\{user}\AppData\Roaming\AdvancedGUI\ ( deleting this folder will reset all your Advanced GUI data )
+You licence key, and project file data / cookies will be saved at C:\Users\user\AppData\Roaming\AdvancedGUI\ ( deleting this folder will reset all your Advanced GUI data )
 
 Preview:
 
