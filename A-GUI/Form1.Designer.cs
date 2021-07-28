@@ -30,6 +30,7 @@ namespace A_GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.notificationlabel = new System.Windows.Forms.Label();
             this.toppanel = new System.Windows.Forms.Panel();
@@ -56,6 +57,7 @@ namespace A_GUI
             this.notificationpanel = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.toppanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topicon)).BeginInit();
             this.panel2.SuspendLayout();
@@ -66,6 +68,7 @@ namespace A_GUI
             // notificationlabel
             // 
             this.notificationlabel.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.notificationlabel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.notificationlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.notificationlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
             this.notificationlabel.Location = new System.Drawing.Point(3, 4);
@@ -84,6 +87,7 @@ namespace A_GUI
             this.toppanel.Controls.Add(this.minimizebutton);
             this.toppanel.Controls.Add(this.maximizebutton);
             this.toppanel.Controls.Add(this.closebutton);
+            this.guna2Transition1.SetDecoration(this.toppanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppanel.Location = new System.Drawing.Point(0, 0);
             this.toppanel.Name = "toppanel";
@@ -94,6 +98,7 @@ namespace A_GUI
             // 
             this.guna2ImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
+            this.guna2Transition1.SetDecoration(this.guna2ImageButton1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2ImageButton1.HoverState.Image = global::A_GUI.Properties.Resources.outline_new_releases_black_24dp;
             this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
@@ -112,6 +117,7 @@ namespace A_GUI
             // 
             this.settingsbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.settingsbutton.CheckedState.Parent = this.settingsbutton;
+            this.guna2Transition1.SetDecoration(this.settingsbutton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.settingsbutton.HoverState.Image = global::A_GUI.Properties.Resources.baseline_settings_black_24dp;
             this.settingsbutton.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.settingsbutton.HoverState.Parent = this.settingsbutton;
@@ -126,6 +132,7 @@ namespace A_GUI
             // toplabel
             // 
             this.toplabel.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.toplabel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.toplabel.Location = new System.Drawing.Point(36, 8);
             this.toplabel.Name = "toplabel";
             this.toplabel.Size = new System.Drawing.Size(108, 13);
@@ -134,6 +141,7 @@ namespace A_GUI
             // 
             // topicon
             // 
+            this.guna2Transition1.SetDecoration(this.topicon, Guna.UI2.AnimatorNS.DecorationType.None);
             this.topicon.Image = global::A_GUI.Properties.Resources._83636;
             this.topicon.Location = new System.Drawing.Point(3, 3);
             this.topicon.Name = "topicon";
@@ -146,6 +154,7 @@ namespace A_GUI
             // 
             this.minimizebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizebutton.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2Transition1.SetDecoration(this.minimizebutton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.minimizebutton.FillColor = System.Drawing.Color.Transparent;
             this.minimizebutton.HoverState.Parent = this.minimizebutton;
             this.minimizebutton.IconColor = System.Drawing.Color.Black;
@@ -159,6 +168,7 @@ namespace A_GUI
             // 
             this.maximizebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizebutton.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.guna2Transition1.SetDecoration(this.maximizebutton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.maximizebutton.FillColor = System.Drawing.Color.Transparent;
             this.maximizebutton.HoverState.Parent = this.maximizebutton;
             this.maximizebutton.IconColor = System.Drawing.Color.Black;
@@ -171,6 +181,7 @@ namespace A_GUI
             // closebutton
             // 
             this.closebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Transition1.SetDecoration(this.closebutton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.closebutton.FillColor = System.Drawing.Color.Transparent;
             this.closebutton.HoverState.Parent = this.closebutton;
             this.closebutton.IconColor = System.Drawing.Color.Black;
@@ -184,6 +195,7 @@ namespace A_GUI
             // 
             this.resizebox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.resizebox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(47)))));
+            this.guna2Transition1.SetDecoration(this.resizebox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.resizebox.FillColor = System.Drawing.Color.White;
             this.resizebox.ForeColor = System.Drawing.Color.Empty;
             this.resizebox.Location = new System.Drawing.Point(831, 480);
@@ -206,10 +218,11 @@ namespace A_GUI
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.panel2.Controls.Add(this.guna2CheckBox3);
             this.panel2.Controls.Add(this.guna2CheckBox2);
             this.panel2.Controls.Add(this.guna2CheckBox1);
+            this.guna2Transition1.SetDecoration(this.panel2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(215, 73);
@@ -224,6 +237,7 @@ namespace A_GUI
             this.guna2CheckBox3.CheckedState.BorderThickness = 1;
             this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
             this.guna2CheckBox3.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2Transition1.SetDecoration(this.guna2CheckBox3, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2CheckBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.guna2CheckBox3.Location = new System.Drawing.Point(6, 50);
             this.guna2CheckBox3.Name = "guna2CheckBox3";
@@ -246,6 +260,7 @@ namespace A_GUI
             this.guna2CheckBox2.CheckedState.BorderThickness = 1;
             this.guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
             this.guna2CheckBox2.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2Transition1.SetDecoration(this.guna2CheckBox2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2CheckBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.guna2CheckBox2.Location = new System.Drawing.Point(6, 28);
             this.guna2CheckBox2.Name = "guna2CheckBox2";
@@ -268,6 +283,7 @@ namespace A_GUI
             this.guna2CheckBox1.CheckedState.BorderThickness = 1;
             this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
             this.guna2CheckBox1.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
+            this.guna2Transition1.SetDecoration(this.guna2CheckBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2CheckBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.guna2CheckBox1.Location = new System.Drawing.Point(6, 7);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
@@ -286,6 +302,7 @@ namespace A_GUI
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.panel1.Controls.Add(this.panel2);
+            this.guna2Transition1.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel1.Location = new System.Drawing.Point(617, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(221, 79);
@@ -326,6 +343,7 @@ namespace A_GUI
             this.notificationpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(230)))), ((int)(((byte)(134)))));
             this.notificationpanel.Controls.Add(this.guna2Button1);
             this.notificationpanel.Controls.Add(this.notificationlabel);
+            this.guna2Transition1.SetDecoration(this.notificationpanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.notificationpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.notificationpanel.Location = new System.Drawing.Point(0, 475);
             this.notificationpanel.Name = "notificationpanel";
@@ -338,6 +356,7 @@ namespace A_GUI
             this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Transition1.SetDecoration(this.guna2Button1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
@@ -355,6 +374,27 @@ namespace A_GUI
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // guna2Transition1
+            // 
+            this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
+            this.guna2Transition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.guna2Transition1.DefaultAnimation = animation1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,6 +405,7 @@ namespace A_GUI
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.resizebox);
             this.Controls.Add(this.toppanel);
+            this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(850, 500);
@@ -411,6 +452,7 @@ namespace A_GUI
         public System.Windows.Forms.Panel notificationpanel;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
     }
 }
 

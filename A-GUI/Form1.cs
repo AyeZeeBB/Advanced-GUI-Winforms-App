@@ -58,7 +58,9 @@ namespace A_GUI
 
             //initilze Cefsharp settings
             var settings = new CefSettings();
-            settings.CachePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Cache";
+            settings.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AdvancedGUI\\Cache";
+            settings.LocalesDirPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AdvancedGUI\\Locales";
+            settings.UserDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AdvancedGUI\\UserData";
             settings.PersistSessionCookies = true;
             Cef.Initialize(settings);
 
@@ -119,21 +121,17 @@ namespace A_GUI
             Settings.Default.DB = guna2CheckBox1.Checked;
             Settings.Default.Save();
 
-            //Load new webeditor based settings
-            if (Settings.Default.DB)
-            {
-                browser.Load("https://development.advancedgui.app/");
-            }
-            else
-            {
-                browser.Load("https://advancedgui.app/");
-            }
-
-            //Notify of setting change
             if (!AppStarting)
             {
-                //Show notification panel
-                notificationpanel.Visible = true;
+                //Load new webeditor based on settings
+                if (Settings.Default.DB)
+                {
+                    browser.Load("https://development.advancedgui.app/");
+                }
+                else
+                {
+                    browser.Load("https://advancedgui.app/");
+                }
 
                 //Set label text depending on checkbox state
                 if (Settings.Default.DB)
@@ -179,19 +177,33 @@ namespace A_GUI
             //Save Checkbox
             Settings.Default.UpdateCheck = guna2CheckBox3.Checked;
             Settings.Default.Save();
+
+            //Notify of setting change
+            if (!AppStarting)
+            {
+                //Set label text depending on checkbox state
+                if (Settings.Default.UpdateCheck)
+                {
+                    ShowNotify("Success: You will be notified for updates!");
+                }
+                else
+                {
+                    ShowNotify("Success: You will not be notified for updates!");
+                }
+            }
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             //Hide notification panel if the close button is pressed
             timer1.Enabled = false;
-            notificationpanel.Visible = false;
+            guna2Transition1.Hide(notificationpanel);
         }
 
         public void ShowNotify(string message)
         {
             //Show notification panel
-            notificationpanel.Visible = true;
+            guna2Transition1.Show(notificationpanel);
 
             notificationlabel.Text = message;
 
@@ -206,7 +218,7 @@ namespace A_GUI
             if (time > 200)
             {
                 timer1.Enabled = false;
-                notificationpanel.Visible = false;
+                guna2Transition1.Hide(notificationpanel);
             }
         }
     }
